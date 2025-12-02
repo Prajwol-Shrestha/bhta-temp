@@ -19,7 +19,6 @@ import {
 } from "@/components/ui/select";
 import { Label } from "@/components/ui/label";
 import { useCreateTransaction } from "@/hooks/useTransactions";
-import { useQueryClient } from "@tanstack/react-query";
 import { toast } from "sonner";
 
 interface AddTransactionModalProps {
@@ -37,7 +36,6 @@ const DEFAULT_CATEGORIES = [
 export function AddTransactionModal({
   categories = DEFAULT_CATEGORIES,
 }: AddTransactionModalProps) {
-  const queryClient = useQueryClient();
   const [open, setOpen] = useState(false);
   const categoryList =
     Array.isArray(categories) && categories.length > 0
